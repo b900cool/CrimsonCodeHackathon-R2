@@ -8,16 +8,20 @@ public class Wander : MonoBehaviour {
     public float speed = 1;
     public float waitTime = 3f;
     public int lowerX = -20, upperX = 20, lowerY = -20, upperY = 20;
+    FollowFeed _found;
 
     // Use this for initialization
     void Start ()
     {
         destination = transform.position;
+        
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+        _found = gameObject.GetComponentInChildren<FollowFeed>();
+
         float step = speed * Time.deltaTime;
         
         move(step);
@@ -33,8 +37,17 @@ public class Wander : MonoBehaviour {
             StartCoroutine(wait());
 
         }
-
-        transform.position = Vector3.MoveTowards(transform.position, destination, step);
+        Debug.Log(_found.feedDetected);
+        if (_found.feedDetected)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, _found.feedVector, step);
+            transform.LookAt(_found.feedVector);
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, destination, step);
+            transform.LookAt(destination);
+        }
     }
 
     
@@ -48,9 +61,14 @@ public class Wander : MonoBehaviour {
         }
     }   
 
-    void OnTriggerEnter(Collider col)
+    void OnTriggerEnter(Collider other)
     {
-
+        if (other.gameObject.tag == "Feed")
+        {
+            Destroy(other.gameObject);
+            _found.feedDetected = false;
+        }
+        
     }
 
 }
