@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowFeed : MonoBehaviour {
 
-    public bool feedDetected = false;
+    public bool sustananceDetected = false;
     public Vector3 feedVector;
 
 	// Use this for initialization
@@ -20,9 +20,9 @@ public class FollowFeed : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Feed")
+        if (other.gameObject.tag == "Feed" || other.gameObject.tag == "Water")
         { 
-            feedDetected = true;
+            sustananceDetected = true;
             Debug.Log("FeedDetected");
             feedVector = new Vector3(other.transform.position.x, 0.5f, other.transform.position.z);
         }
@@ -31,10 +31,11 @@ public class FollowFeed : MonoBehaviour {
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Feed")
+        if (other.gameObject.tag == "Feed" || other.gameObject.tag == "Water")
         {
-            feedDetected = false;
+            sustananceDetected = false;
         }
         Debug.Log("FeedLost");
     }
+    
 }

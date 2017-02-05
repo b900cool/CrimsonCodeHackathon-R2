@@ -15,7 +15,7 @@ public class Wander : MonoBehaviour {
     {
         destination = transform.position;
         
-	}
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -37,8 +37,8 @@ public class Wander : MonoBehaviour {
             StartCoroutine(wait());
 
         }
-        Debug.Log(_found.feedDetected);
-        if (_found.feedDetected)
+        Debug.Log(_found.sustananceDetected);
+        if (_found.sustananceDetected)
         {
             transform.position = Vector3.MoveTowards(transform.position, _found.feedVector, step);
             transform.LookAt(_found.feedVector);
@@ -66,7 +66,7 @@ public class Wander : MonoBehaviour {
         if (other.gameObject.tag == "Feed")
         {
             Destroy(other.gameObject);
-            _found.feedDetected = false;
+            _found.sustananceDetected = false;
         }
         
     }
