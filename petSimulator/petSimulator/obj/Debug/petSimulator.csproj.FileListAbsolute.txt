@@ -1,0 +1,6 @@
+c:\users\justin lam\documents\visual studio 2015\Projects\petSimulator\petSimulator\bin\Debug\petSimulator.exe.config
+c:\users\justin lam\documents\visual studio 2015\Projects\petSimulator\petSimulator\bin\Debug\petSimulator.exe
+c:\users\justin lam\documents\visual studio 2015\Projects\petSimulator\petSimulator\bin\Debug\petSimulator.pdb
+c:\users\justin lam\documents\visual studio 2015\Projects\petSimulator\petSimulator\obj\Debug\petSimulator.csprojResolveAssemblyReference.cache
+c:\users\justin lam\documents\visual studio 2015\Projects\petSimulator\petSimulator\obj\Debug\petSimulator.exe
+c:\users\justin lam\documents\visual studio 2015\Projects\petSimulator\petSimulator\obj\Debug\petSimulator.pdb
