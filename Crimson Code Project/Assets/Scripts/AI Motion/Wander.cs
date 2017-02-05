@@ -21,6 +21,8 @@ public class Wander : MonoBehaviour {
         float step = speed * Time.deltaTime;
         
         move(step);
+
+        
 	}
 
     void move(float step)
@@ -42,7 +44,13 @@ public class Wander : MonoBehaviour {
         if (transform.position == destination)
         {
             destination = new Vector3(Random.Range(-20, 20), 0.5f, Random.Range(-20, 20));
+            transform.LookAt(destination);
         }
     }   
+
+    void OnTriggerEnter(Collider col)
+    {
+
+    }
 
 }
