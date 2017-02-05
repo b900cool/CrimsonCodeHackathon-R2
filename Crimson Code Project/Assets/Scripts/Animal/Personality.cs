@@ -2,18 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pet
+public class Personality: MonoBehaviour
 {
-    public void setScale(double size)
+    enum personality
     {
-        scale = size;
-    }
-    public void setHunger(int hungry)
-    {
-        hunger = hungry;
-    }
-    public double scale;
-    public int hunger;
+        Timid, Social, Asshole, Cunt
+    };
 	// Use this for initialization
 	void Start()
     {
@@ -23,6 +17,8 @@ public class Pet
 	// Update is called once per frame
 	void Update()
     {
-		
+        personality character;
+
+        character = (personality)Random.Range(0, 3);	
 	}
 }
