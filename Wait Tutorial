@@ -1,0 +1,27 @@
+void Update ()
+    {
+        float step = speed * Time.deltaTime;
+        
+        move(step);//moving function is called
+	}
+
+    void move(float step)
+    {
+        if (transform.position == destination)
+        {
+            
+            StartCoroutine(wait());//runs coroutine that allows for the script to be halted
+
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, destination, step);//executes motion
+    }
+
+    
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(waitTime);//sets the amount of time to be halted.
+        destination = new Vector3(Random.Range(-20, 20), 0.5f, Random.Range(-20, 20));//Your code that you want to be executed post halt.
+    }   
+
+}
