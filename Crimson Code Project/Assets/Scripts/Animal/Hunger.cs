@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Hunger: Pet
 {
+    public int getHungerState()
+    {
+        return hungerCount;
+    }
     public int hungerCount = 0;
     private float timer = 0.0f;
 	// Use this for initialization
