@@ -21,6 +21,8 @@ public class Wander : MonoBehaviour {
         float step = speed * Time.deltaTime;
         
         move(step);
+
+        
 	}
 
     void move(float step)
@@ -45,5 +47,10 @@ public class Wander : MonoBehaviour {
             transform.LookAt(destination);
         }
     }   
+
+    void OnTriggerEnter(Collider col)
+    {
+
+    }
 
 }
