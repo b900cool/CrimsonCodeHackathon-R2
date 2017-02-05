@@ -22,8 +22,6 @@ public class Hunger: Pet
                 hungerCount++;
                 timer = 0.0f;
             }
-
-
         }
 	}
   
