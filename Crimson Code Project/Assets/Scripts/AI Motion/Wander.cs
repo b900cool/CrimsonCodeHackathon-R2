@@ -7,7 +7,7 @@ public class Wander : MonoBehaviour {
     public Vector3 destination = new Vector3(1, 1, 1);
     public float speed = 1;
     public float waitTime = 3f;
-    
+    public int lowerX = -20, upperX = 20, lowerY = -20, upperY = 20;
 
     // Use this for initialization
     void Start ()
